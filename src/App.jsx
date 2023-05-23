@@ -9,6 +9,9 @@ function App() {
   return (
     <>
       <h2>Web 2.5 Trivia</h2>
+      {CATEGORIES.map((category) => {
+        return <button key={category}>{category}</button>;
+      })}
     </>
   );
 }
