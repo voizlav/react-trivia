@@ -8,6 +8,8 @@ import Heading from "./components/Heading";
 import CategoryList from "./components/CategoryList";
 
 const App = () => {
+  const [category, setCategory] = useState("");
+
   return (
     <>
       <div className="wrapper">
