@@ -6,7 +6,11 @@ import "./App.css";
 
 function App() {
   console.log(URL);
-  return <></>;
+  return (
+    <>
+      <h2>Web 2.5 Trivia</h2>
+    </>
+  );
 }
 
 export default App;
