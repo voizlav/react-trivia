@@ -9,10 +9,12 @@ function App() {
   console.log(URL);
   return (
     <>
-      <h2>Web 2.5 Trivia</h2>
-      {CATEGORIES.map((category) => {
-        return <Button key={category} label={category} />;
-      })}
+      <div className="wrapper">
+        <h2>Web 2.5 Trivia</h2>
+        {CATEGORIES.map((category) => {
+          return <Button key={category} label={category} />;
+        })}
+      </div>
     </>
   );
 }
