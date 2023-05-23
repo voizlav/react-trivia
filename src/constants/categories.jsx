@@ -1,0 +1,17 @@
+export const CATEGORIES = [
+  "artliterature",
+  "language",
+  "sciencenature",
+  "general",
+  "fooddrink",
+  "peopleplaces",
+  "geography",
+  "historyholidays",
+  "entertainment",
+  "toysgames",
+  "music",
+  "mathematics",
+  "religionmythology",
+  "sportsleisure",
+  "random",
+];
