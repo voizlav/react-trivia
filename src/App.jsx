@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CATEGORIES } from "./constants/categories";
+import CATEGORIES from "./constants/categories";
 import { API_KEY } from "./constants/api";
 import URL from "./constants/URL";
 import Button from "./components/Button";
