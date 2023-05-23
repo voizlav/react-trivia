@@ -9,7 +9,7 @@ import Heading from "./components/Heading";
 
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <>
       <div className="wrapper">
@@ -20,6 +20,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
 export default App;
