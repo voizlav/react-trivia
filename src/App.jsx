@@ -1,5 +1,6 @@
 import "./App.css";
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import CATEGORIES from "./constants/CATEGORIES";
 import API_KEY from "./constants/API_KEY";
 import URL from "./constants/URL";
