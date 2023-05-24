@@ -1,7 +1,13 @@
-import CButton from "./CButton";
+import Button from "./Button";
 
-export default ({ categories, handler }) => {
+export default ({ categories, handlerCategory }) => {
   return categories.map((category) => {
-    return <CButton key={category} label={category} handler={handler} />;
+    return (
+      <Button
+        key={category}
+        label={category}
+        handler={() => handlerPick(category)}
+      />
+    );
   });
 };
