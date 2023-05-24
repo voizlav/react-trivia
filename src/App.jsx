@@ -9,6 +9,7 @@ import CategoryList from "./components/CategoryList";
 
 const App = () => {
   const [category, setCategory] = useState("");
+  const [question, setQuestion] = useState("");
 
   useEffect(() => {
     category && console.log(category);
