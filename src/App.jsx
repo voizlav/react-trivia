@@ -1,6 +1,8 @@
 import "./App.css";
 
 import { useState, useEffect } from "react";
+import axios from "axios";
+
 import CATEGORIES from "./constants/CATEGORIES";
 import API_KEY from "./constants/API_KEY";
 import URL from "./constants/URL";
@@ -10,13 +12,32 @@ import CategoryList from "./components/CategoryList";
 const App = () => {
   const [category, setCategory] = useState("");
   const [question, setQuestion] = useState("");
+  const [answer, setAnswer] = useState("");
 
   useEffect(() => {
-    category && console.log(category);
+    category && fetchQuestion();
   }, [category]);
 
   const handlePickCategory = (category) => {
     setCategory(category);
+  };
+
+  const fetchQuestion = async () => {
+    try {
+      if (category) {
+        const {
+          data: [{ question, answer }],
+        } = await axios.get(`${URL}?category=${category}`, {
+          headers: { "X-Api-Key": API_KEY },
+        });
+        setQuestion(question);
+        setAnswer(answer);
+        console.log("Question:", question);
+        console.log("Answer:", answer);
+      }
+    } catch (error) {
+      console.error("Error fetching question:", error);
+    }
   };
 
   return (
