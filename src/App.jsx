@@ -44,12 +44,18 @@ const App = () => {
     setCorrectAnswer("");
   };
 
+  const handleAnswer = () => {};
+
   return (
     <>
       <div className="wrapper">
         <Heading label={"Web 2.5 Trivia"} />
         {category ? (
-          <QuestionList question={question} handlerBack={handleBack} />
+          <QuestionList
+            question={question}
+            handlerBack={handleBack}
+            handlerAnswer={handleAnswer}
+          />
         ) : (
           <CategoryList categories={CATEGORIES} handler={handlePickCategory} />
         )}
