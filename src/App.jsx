@@ -14,6 +14,7 @@ const App = () => {
   const [category, setCategory] = useState("");
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
+  const [points, setPoints] = useState(0);
 
   useEffect(() => {
     category && fetchQuestion();
@@ -42,15 +43,25 @@ const App = () => {
   const handleBack = () => {
     setCategory("");
     setQuestion("");
-    setCorrectAnswer("");
+    setAnswer("");
   };
 
-  const handleAnswer = () => {};
+  const handlePoints = () => {
+    setPoints(points + 1);
+  };
+
+  const handleAnswer = (userAnswer) => {
+    if (userAnswer.toLowerCase() === answer.toLowerCase()) {
+      handleBack();
+      handlePoints();
+    }
+  };
 
   return (
     <>
       <div className="wrapper">
         <Heading label={"Web 2.5 Trivia"} />
+        <Heading label={`Points: ${points}`} />
         {category ? (
           <QuestionList
             question={question}
