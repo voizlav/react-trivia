@@ -1,7 +1,7 @@
-import Button from "./Button";
+import CButton from "./CButton";
 
 export default ({ categories, handler }) => {
   return categories.map((category) => {
-    return <Button key={category} label={category} handler={handler} />;
+    return <CButton key={category} label={category} handler={handler} />;
   });
 };
