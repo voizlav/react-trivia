@@ -4,7 +4,7 @@ import Heading from "./Heading";
 
 export default ({ question, handlerBack, handlerAnswer }) => {
   const [userAnswer, setUserAnswer] = useState("");
-
+  console.log(userAnswer);
   return (
     <div className="wrapper">
       <QButton handler={handlerBack} label={"Back"} />
@@ -13,7 +13,7 @@ export default ({ question, handlerBack, handlerAnswer }) => {
       ) : (
         <Heading label={"LOADING DATA..."} />
       )}
-      <input />
+      <input onChange={(e) => setUserAnswer(e.target.value)} />
       <QButton handler={handlerAnswer} label={"Submit"} />
     </div>
   );
