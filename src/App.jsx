@@ -32,19 +32,27 @@ const App = () => {
         });
         setQuestion(question);
         setAnswer(answer);
-        console.log("Question:", question);
-        console.log("Answer:", answer);
       }
     } catch (error) {
       console.error("Error fetching question:", error);
     }
   };
 
+  const handleBack = () => {
+    setCategory("");
+    setQuestion("");
+    setCorrectAnswer("");
+  };
+
   return (
     <>
       <div className="wrapper">
         <Heading label={"Web 2.5 Trivia"} />
-        <CategoryList categories={CATEGORIES} handler={handlePickCategory} />
+        {category ? (
+          <QuestionList question={question} handlerBack={handleBack} />
+        ) : (
+          <CategoryList categories={CATEGORIES} handler={handlePickCategory} />
+        )}
       </div>
     </>
   );
