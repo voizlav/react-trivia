@@ -6,7 +6,8 @@ export default ({ categories, handlerPick }) => {
       <Button
         key={category}
         label={category}
-        handler={() => handlerPick(category)}
+        handler={handlerPick(category)}
+        param={category}
       />
     );
   });

@@ -69,7 +69,10 @@ const App = () => {
             handlerAnswer={handleAnswer}
           />
         ) : (
-          <CategoryList categories={CATEGORIES} handler={handlePickCategory} />
+          <CategoryList
+            categories={CATEGORIES}
+            handlerPick={handlePickCategory}
+          />
         )}
       </div>
     </>
