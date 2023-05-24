@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-export default ({ categories, handlerCategory }) => {
+export default ({ categories, handlerPick }) => {
   return categories.map((category) => {
     return (
       <Button
