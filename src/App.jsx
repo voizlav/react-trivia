@@ -8,6 +8,7 @@ import API_KEY from "./constants/API_KEY";
 import URL from "./constants/URL";
 import Heading from "./components/Heading";
 import CategoryList from "./components/CategoryList";
+import QuestionList from "./components/QuestionList";
 
 const App = () => {
   const [category, setCategory] = useState("");
