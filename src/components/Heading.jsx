@@ -1,3 +1,3 @@
-export default ({ label }) => {
-  return <h2>{label}</h2>;
+export default ({ label, color }) => {
+  return <h2 className={color}>{label}</h2>;
 };
