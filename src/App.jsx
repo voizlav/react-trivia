@@ -46,17 +46,19 @@ const App = () => {
     setAnswer("");
   };
 
-  const handlePoints = () => {
-    setPoints(points + 1);
+  const handlePoints = (isCorrect) => {
+    isCorrect ? setPoints(points + 1) : setPoints(points - 1);
   };
 
   const handleAnswer = (userAnswer) => {
     if (userAnswer.toLowerCase() === answer.toLowerCase()) {
       handleBack();
-      handlePoints();
+      handlePoints(true);
+    } else {
+      handlePoints(false);
     }
   };
-
+  console.log(answer);
   return (
     <>
       <div className="wrapper">
