@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "./Button";
 import Heading from "./Heading";
 
-export default ({ question, handlerBack, handlerAnswer }) => {
+export default ({ question, handlerBack, handlerAnswer, handlerError }) => {
   const [userAnswer, setUserAnswer] = useState("");
 
   return (
@@ -15,7 +15,7 @@ export default ({ question, handlerBack, handlerAnswer }) => {
       )}
       <input
         onChange={(e) => setUserAnswer(e.target.value)}
-        className="inputDefault"
+        className={`inputDefault ${handlerError && "inputError"}`}
       />
       <Button handler={() => handlerAnswer(userAnswer)} label={"Submit"} />
     </div>
