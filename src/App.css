@@ -23,3 +23,11 @@
   border: 1px solid red;
   color: red;
 }
+
+.positivePoints {
+  color: green;
+}
+
+.negativePoints {
+  color: red;
+}
