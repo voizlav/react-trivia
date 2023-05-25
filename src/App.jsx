@@ -70,12 +70,19 @@ const App = () => {
       alertWrongAnswer(false);
     }, "1000");
   };
-  console.log(answer);
+
+  const handlePointsColor = (points) => {
+    return points > 0 ? "positivePoints" : points < 0 ? "negativePoints" : "";
+  };
+
   return (
     <>
       <div className="wrapper">
         <Heading label={"Web 2.5 Trivia"} />
-        <Heading label={`Points: ${points}`} />
+        <Heading
+          label={`Points: ${points}`}
+          color={handlePointsColor(points)}
+        />
         {apiErrorAlert && <Heading label={"Error fetching question"} />}
         {category ? (
           <QuestionList
