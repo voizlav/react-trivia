@@ -15,6 +15,7 @@ const App = () => {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [inputErrorAlert, setInputErrorAlert] = useState(false);
+  const [apiErrorAlert, setApiErrorAlert] = useState(false);
   const [points, setPoints] = useState(0);
 
   useEffect(() => {
