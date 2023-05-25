@@ -14,6 +14,7 @@ const App = () => {
   const [category, setCategory] = useState("");
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
+  const [inputErrorAlert, setInputErrorAlert] = useState(false);
   const [points, setPoints] = useState(0);
 
   useEffect(() => {
@@ -50,13 +51,21 @@ const App = () => {
     isCorrect ? setPoints(points + 1) : setPoints(points - 1);
   };
 
+  const alertWrongAnswer = (isWrong) => {
+    isWrong ? setInputErrorAlert(true) : setInputErrorAlert(false);
+  };
+
   const handleAnswer = (userAnswer) => {
     if (userAnswer.toLowerCase() === answer.toLowerCase()) {
       handleBack();
       handlePoints(true);
-    } else {
-      handlePoints(false);
+      return;
     }
+    handlePoints(false);
+    alertWrongAnswer(true);
+    setTimeout(() => {
+      alertWrongAnswer(false);
+    }, "1000");
   };
   console.log(answer);
   return (
@@ -69,6 +78,7 @@ const App = () => {
             question={question}
             handlerBack={handleBack}
             handlerAnswer={handleAnswer}
+            handlerError={inputErrorAlert}
           />
         ) : (
           <CategoryList
