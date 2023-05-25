@@ -11,10 +11,14 @@
   width: 10rem;
 }
 
-.wrapper > input {
+.inputDefault {
   all: unset;
   padding: .5rem;
   border: 1px solid grey;
   border-radius: .3rem;
   text-align: center;
+}
+
+.inputError {
+  border: 1px solid red;
 }
