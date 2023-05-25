@@ -36,9 +36,11 @@ const App = () => {
         });
         setQuestion(question);
         setAnswer(answer);
+        setApiErrorAlert(false);
       }
     } catch (error) {
       console.error("Error fetching question:", error);
+      setApiErrorAlert(true);
     }
   };
 
@@ -74,12 +76,13 @@ const App = () => {
       <div className="wrapper">
         <Heading label={"Web 2.5 Trivia"} />
         <Heading label={`Points: ${points}`} />
+        {apiErrorAlert && <Heading label={"Error fetching question"} />}
         {category ? (
           <QuestionList
             question={question}
             handlerBack={handleBack}
             handlerAnswer={handleAnswer}
-            handlerError={inputErrorAlert}
+            handlerInput={inputErrorAlert}
           />
         ) : (
           <CategoryList
