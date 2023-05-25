@@ -13,7 +13,10 @@ export default ({ question, handlerBack, handlerAnswer }) => {
       ) : (
         <Heading label={"LOADING DATA..."} />
       )}
-      <input onChange={(e) => setUserAnswer(e.target.value)} />
+      <input
+        onChange={(e) => setUserAnswer(e.target.value)}
+        className="inputDefault"
+      />
       <Button handler={() => handlerAnswer(userAnswer)} label={"Submit"} />
     </div>
   );
